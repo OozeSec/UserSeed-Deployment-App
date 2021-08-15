@@ -1,0 +1,18 @@
+User-Seed Deployment App
+-------------------------------------------------------------------------------------------
+Caveats
+
+* This application assumes $SPLUNK_HOME is /opt - you may need to change accordingly
+* This application assumes that os user can call splunkd without sudo IE- /opt/splunk/bin/splunk restart 
+
+-------------------------------------------------------------------------------------------
+
+A user-seed.conf.spec file is included under ~/userseed_deployment_app/conf/ directory. Please review the spec file. userseed_deployment_app prepares a hashed value for the HASHED_PASSWORD attribute of the user-seed.conf file. It is not recommend to use a clear text password. While this script CAN be editted to perform that task- I will not encourage or develope a out of box solution for that. However, if you must; the tools are in place for you to rearrange. 
+
+1) Add you password to the ~/userseed_deployment_app/admin/passwd.txt file. 
+* Important: if your password is using special char's you must enclose your password with single quotes IE: 'Th1$P4ssW0rd%'
+
+2) Set username in ~/userseed_deployment_app/conf/user-seed.conf file. 
+* Important: Do not remove the commented section of the file, or the script will place the hashed value on the same line as the USERNAME attribute.
+
+ 

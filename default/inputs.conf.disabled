@@ -1,0 +1,15 @@
+[default]
+host = $decideOnStartup
+
+[monitor:///opt/splunkforwarder/etc/apps/userseed_deployment_app/log/UDA.log]
+disabled = 0
+index = main
+source = userseed
+sourcetype = userseed:log
+
+[script:///opt/splunkforwarder/etc/apps/userseed_deployment_app/bin/setjob.py]
+disabled = 1
+interval = -1
+source = userseed
+sourcetype = userseed:script
+index = main
